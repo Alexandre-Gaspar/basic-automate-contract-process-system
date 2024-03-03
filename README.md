@@ -1,9 +1,9 @@
 # Processamento de Contratos
 
-    Este é um programa simples desenvolvido para automatizar o processamento de contratos de uma empresa. O processo envolve a geração de parcelas com base no número de meses desejado, considerando os serviços de pagamento online.
+>Este é um programa simples desenvolvido para automatizar o processamento de contratos de uma empresa. O processo envolve a geração de parcelas com base no número de meses desejado, considerando os serviços de pagamento online.
 
 ## Requisitos do Sistema
- >O programa é desenvolvido em Java e utiliza o serviço de pagamento online do Paypal. O Paypal aplica juros simples de 1% a cada parcela, além de uma taxa de pagamento de 2%.
+>O programa é desenvolvido em Java e utiliza o serviço de pagamento online do Paypal. O Paypal aplica juros simples de 1% a cada parcela, além de uma taxa de pagamento de 2%.
 
 ## Como Utilizar
 1. Execução do Programa:
