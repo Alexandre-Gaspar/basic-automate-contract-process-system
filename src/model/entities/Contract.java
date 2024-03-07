@@ -1,6 +1,7 @@
 package model.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,10 @@ public class Contract {
     private Double totalValue;
     
     // Association (have many)...
-    private List<Installment> installment = new ArrayList<>();
+    private List<Installment> installments = new ArrayList<>();
+
+    // Formating date (dd/MM/yyyy)...
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
     public Contract() {} // Empty constructor...
 
@@ -46,15 +50,25 @@ public class Contract {
     }
 
     public List<Installment> getInstallment() {
-        return installment;
+        return installments;
     }
     
     public void addInstallment(Installment installment) {
-        this.installment.add(installment);
+        this.installments.add(installment);
     }
 
     public void removeInstallment(Installment installment) {
-        this.installment.remove(installment);
+        this.installments.remove(installment);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Installment each : installments) {
+            sb.append(each.getDueDate().format(dateFormat) + " - " + String.format("%.2f%n", each.getAmount()));
+        }
+
+        return sb.toString();
     }
 
 }
